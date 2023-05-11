@@ -2,11 +2,15 @@
 import React, { useContext, useState } from 'react';
 import { AppContext } from '../context/AppContext';
 const Budget = () => {
-    const { budget, currency, dispatch } = useContext(AppContext);
+    const { budget, currency, dispatch, remaining } = useContext(AppContext);
 
     const changeVal = (value) => {
         if (parseInt(value) > 20000) {
             alert("Budget cannot be over "+currency+"20000");
+        }
+        else if(value < (budget-remaining)){
+            alert("You cannot reduce budget value lower than spending");
+
         }
         else {
             dispatch({
