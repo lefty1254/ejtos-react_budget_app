@@ -57,10 +57,10 @@ const Currency = () => {
 
     return (
 
-        <select ref={ref} className="alert alert-success" id="inputGroupSelect01" onChange={(event) => changeCurrency(event.target)}>
-            <option value hidden>{name}</option>
+        <select ref={ref} className="alert text-white" style={{backgroundColor: 'lightgreen'}} id="inputGroupSelect01" onChange={(event) => changeCurrency(event.target)}>
+            <option className='text-light' value hidden>{name}</option>
             {currencies.map((c) => (
-                <option value={c.value} name={c.name}>{c.value} {c.name}</option>
+                <option className='text-dark' value={c.value} name={c.name}>{c.value} {c.name}</option>
             ))}
             {/* <option value="$" name="Dollar">$ Dollar</option>
                 <option defaultValue value="£" name='Pound'>£ Pound</option>
